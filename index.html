@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Fuen Belarma — Video Editor, Graphic Designer & AI Video Specialist." />
+  <title>Fuen Belarma — Video Editor & AI Specialist</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+    :root{--bg:#08090d;--text:#f5f5f2;--muted:#a5a7ad;--line:rgba(255,255,255,.12);--accent:#c9ff62;--card:#111319}
+    *{box-sizing:border-box} html{scroll-behavior:smooth} body{margin:0;background:var(--bg);color:var(--text);font-family:'DM Sans',sans-serif;overflow-x:hidden}
+    body:before{content:'';position:fixed;inset:0;pointer-events:none;opacity:.035;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.45'/%3E%3C/svg%3E')}
+    a{color:inherit;text-decoration:none}.wrap{width:min(1240px,calc(100% - 48px));margin:auto}
+    nav{height:86px;display:flex;align-items:center;justify-content:space-between;position:relative;z-index:10}.brand{font-family:'Space Grotesk';font-weight:700;font-size:18px;letter-spacing:-.04em}.brand span{color:var(--accent)}
+    .navlinks{display:flex;gap:28px;color:#bbb;font-size:14px}.navlinks a{transition:.25s}.navlinks a:hover{color:#fff}.contact-btn{border:1px solid var(--line);padding:12px 18px;border-radius:999px;background:#fff;color:#090a0d;font-weight:600;cursor:pointer;transition:.25s}.contact-btn:hover{transform:translateY(-2px);box-shadow:0 12px 30px rgba(201,255,98,.14)}
+    main{min-height:calc(100vh - 86px);display:flex;align-items:center}.hero{position:relative;width:100%;padding:80px 0 110px;overflow:hidden}.orb{position:absolute;width:520px;height:520px;border-radius:50%;right:-130px;top:-50px;background:radial-gradient(circle at 35% 35%,rgba(201,255,98,.32),rgba(125,90,255,.18) 35%,transparent 70%);filter:blur(35px);animation:float 8s ease-in-out infinite}.orb2{position:absolute;width:250px;height:250px;border-radius:50%;left:35%;bottom:-130px;background:rgba(94,80,255,.12);filter:blur(50px)}
+    @keyframes float{50%{transform:translate(-25px,25px) scale(1.06)}}
+    .eyebrow{display:inline-flex;align-items:center;gap:9px;color:#c6c8ce;font-size:13px;border:1px solid var(--line);border-radius:999px;padding:9px 13px;background:rgba(255,255,255,.025);backdrop-filter:blur(12px)}.dot{width:7px;height:7px;border-radius:50%;background:var(--accent);box-shadow:0 0 14px var(--accent)}
+    h1{font-family:'Space Grotesk';font-size:clamp(60px,9vw,132px);line-height:.88;letter-spacing:-.075em;max-width:1100px;margin:26px 0 28px;font-weight:600}.lime{color:var(--accent)}
+    .intro{display:flex;align-items:flex-end;justify-content:space-between;gap:30px;max-width:1000px}.intro p{color:var(--muted);font-size:18px;line-height:1.65;max-width:580px;margin:0}.actions{display:flex;gap:10px;flex-wrap:wrap}.pill{padding:14px 20px;border:1px solid var(--line);border-radius:999px;font-size:14px;transition:.25s}.pill:hover{border-color:rgba(201,255,98,.5);background:rgba(201,255,98,.06);transform:translateY(-2px)}
+    .marquee{border-block:1px solid var(--line);overflow:hidden;margin-top:70px}.track{display:flex;width:max-content;animation:scroll 18s linear infinite}.track span{font-family:'Space Grotesk';font-size:14px;letter-spacing:.12em;text-transform:uppercase;color:#7f8188;padding:17px 26px}.track b{color:var(--accent);font-weight:500}@keyframes scroll{to{transform:translateX(-50%)}}
+    .below{padding:100px 0}.section-title{font-family:'Space Grotesk';font-size:clamp(38px,6vw,76px);letter-spacing:-.06em;margin:0 0 45px}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.card{min-height:230px;border:1px solid var(--line);background:linear-gradient(145deg,#111319,#0b0c10);border-radius:24px;padding:25px;display:flex;flex-direction:column;justify-content:space-between;transition:.3s}.card:hover{transform:translateY(-7px);border-color:rgba(201,255,98,.35)}.num{font-size:12px;color:#777}.card h3{font-family:'Space Grotesk';font-size:28px;margin:0 0 8px}.card p{color:var(--muted);line-height:1.5;margin:0;font-size:14px}
+    .contact-panel{position:fixed;z-index:50;right:20px;top:20px;width:min(420px,calc(100% - 40px));background:#111318;border:1px solid rgba(255,255,255,.14);border-radius:28px;padding:28px;box-shadow:0 30px 100px rgba(0,0,0,.65);transform:translateY(-20px) scale(.96);opacity:0;pointer-events:none;transition:.3s}.contact-panel.open{transform:none;opacity:1;pointer-events:auto}.close{position:absolute;right:18px;top:18px;width:38px;height:38px;border:1px solid var(--line);border-radius:50%;background:transparent;color:#fff;cursor:pointer;font-size:20px}.panel-kicker{color:var(--accent);font-size:12px;text-transform:uppercase;letter-spacing:.14em}.contact-panel h2{font-family:'Space Grotesk';font-size:48px;letter-spacing:-.06em;margin:10px 0}.contact-panel>p{color:var(--muted);line-height:1.6}.contact-list{margin-top:26px;display:grid;gap:10px}.contact-item{display:flex;align-items:center;justify-content:space-between;padding:15px 16px;border:1px solid var(--line);border-radius:15px;background:rgba(255,255,255,.025)}.contact-item small{display:block;color:#777;margin-bottom:3px}.contact-item strong{font-size:14px}.contact-item:hover{border-color:rgba(201,255,98,.35)}.overlay{position:fixed;inset:0;background:rgba(0,0,0,.5);backdrop-filter:blur(5px);z-index:40;opacity:0;pointer-events:none;transition:.3s}.overlay.open{opacity:1;pointer-events:auto}
+    footer{padding:40px 0 55px;border-top:1px solid var(--line);display:flex;justify-content:space-between;color:#666;font-size:13px}
+    @media(max-width:760px){.wrap{width:min(100% - 30px,1240px)}.navlinks{display:none}.hero{padding-top:50px}h1{font-size:62px}.intro{display:block}.actions{margin-top:25px}.grid{grid-template-columns:1fr}.contact-panel h2{font-size:40px}footer{display:block}.footer-right{margin-top:10px}}
+  </style>
+</head>
+<body>
+  <div class="overlay" id="overlay"></div>
+  <aside class="contact-panel" id="contactPanel" aria-hidden="true">
+    <button class="close" id="closeBtn" aria-label="Close">×</button>
+    <div class="panel-kicker">Let's work together</div>
+    <h2>Have a project<br>in mind?</h2>
+    <p>I'm available for video editing, social media creatives, graphic design, and AI-powered video projects.</p>
+    <div class="contact-list">
+      <a class="contact-item" href="mailto:YOUR_EMAIL@example.com"><span><small>Email</small><strong>YOUR_EMAIL@example.com</strong></span><span>↗</span></a>
+      <a class="contact-item" href="#" onclick="return false"><span><small>Discord</small><strong>YOUR_DISCORD</strong></span><span>↗</span></a>
+      <a class="contact-item" href="#" onclick="return false"><span><small>Telegram</small><strong>@YOUR_TELEGRAM</strong></span><span>↗</span></a>
+      <a class="contact-item" href="#" onclick="return false"><span><small>WhatsApp</small><strong>YOUR_WHATSAPP</strong></span><span>↗</span></a>
+    </div>
+  </aside>
+
+  <header class="wrap">
+    <nav>
+      <a class="brand" href="#">FUEN<span>.</span></a>
+      <div class="navlinks"><a href="#work">Work</a><a href="#services">Services</a><a href="#about">About</a></div>
+      <button class="contact-btn" id="contactBtn">Contact me ↗</button>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero wrap" id="about">
+      <div class="orb"></div><div class="orb2"></div>
+      <div class="eyebrow"><span class="dot"></span> Available for freelance projects</div>
+      <h1>VIDEO EDITOR<br><span class="lime">& AI SPECIALIST.</span></h1>
+      <div class="intro">
+        <p>I create high-quality videos, social creatives, and AI-powered visual content designed to make brands stand out, communicate clearly, and keep people watching.</p>
+        <div class="actions"><a class="pill" href="#work">View my work ↓</a><button class="pill" id="heroContact" style="background:none;color:#fff;cursor:pointer">Let's talk ↗</button></div>
+      </div>
+    </section>
+  </main>
+
+  <div class="marquee"><div class="track"><span>VIDEO EDITING <b>✦</b></span><span>AI VIDEO <b>✦</b></span><span>GRAPHIC DESIGN <b>✦</b></span><span>SOCIAL MEDIA <b>✦</b></span><span>VIDEO EDITING <b>✦</b></span><span>AI VIDEO <b>✦</b></span><span>GRAPHIC DESIGN <b>✦</b></span><span>SOCIAL MEDIA <b>✦</b></span></div></div>
+
+  <section class="below wrap" id="work">
+    <div class="section-title">What I <span class="lime">create.</span></div>
+    <div class="grid" id="services">
+      <article class="card"><span class="num">01 / VIDEO</span><div><h3>Video Editing</h3><p>Reels, short-form ads, social content, storytelling, VSLs and polished final edits.</p></div></article>
+      <article class="card"><span class="num">02 / AI</span><div><h3>AI Video</h3><p>AI-generated product visuals, UGC-style concepts, image-to-video scenes and creative ads.</p></div></article>
+      <article class="card"><span class="num">03 / DESIGN</span><div><h3>Graphic Design</h3><p>Social media graphics, campaign creatives, thumbnails and branded visual systems.</p></div></article>
+    </div>
+  </section>
+
+  <footer class="wrap"><span>© 2026 Fuen Belarma</span><span class="footer-right">Video Editor · Graphic Designer · AI Specialist</span></footer>
+
+  <script>
+    const panel=document.getElementById('contactPanel'),overlay=document.getElementById('overlay');
+    const open=()=>{panel.classList.add('open');overlay.classList.add('open');panel.setAttribute('aria-hidden','false')};
+    const close=()=>{panel.classList.remove('open');overlay.classList.remove('open');panel.setAttribute('aria-hidden','true')};
+    document.getElementById('contactBtn').onclick=open;document.getElementById('heroContact').onclick=open;document.getElementById('closeBtn').onclick=close;overlay.onclick=close;
+    document.addEventListener('keydown',e=>{if(e.key==='Escape')close()});
+    document.addEventListener('mousemove',e=>{const x=(e.clientX/innerWidth-.5)*10,y=(e.clientY/innerHeight-.5)*10;document.querySelector('.orb').style.transform=`translate(${x}px,${y}px)`});
+  </script>
+</body>
+</html>
