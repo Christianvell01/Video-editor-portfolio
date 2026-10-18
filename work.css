@@ -1,0 +1,11 @@
+/* Real work collection and on-demand video playback. */
+.project-card[hidden],#load-more-work[hidden],#project-video[hidden],#drive-player[hidden]{display:none!important}
+.filters{flex-wrap:wrap;gap:9px}.filters .filter{white-space:nowrap}.filters .filter>span{margin-left:7px;opacity:.6;font-size:11px}
+.project-info>div{min-width:0}.project-info h3{overflow-wrap:anywhere;font-size:clamp(17px,2vw,23px)}
+.work-pagination{display:flex;flex-direction:column;align-items:center;gap:12px;padding-top:35px}.work-pagination p{color:var(--muted);font-size:13px;margin:0}
+.hero-reel>.hero-preview{width:100%;height:100%;object-fit:cover;object-position:center;display:block}
+#drive-player{display:block;width:100%;height:min(68svh,700px);border:0;border-radius:16px;background:#000}
+#project-video{display:block;width:100%;max-height:70svh;object-fit:contain;background:#000}
+#video-dialog .dialog-details{align-items:start;gap:22px}#watch-drive{white-space:nowrap;align-self:start}
+#feature-picker{max-width:260px}
+@media(max-width:760px){.filters{gap:7px}.filters .filter{padding:8px 12px;font-size:12px}#drive-player{height:65svh}#video-dialog .dialog-details{display:flex;flex-direction:column}.work-pagination{padding-top:25px}}

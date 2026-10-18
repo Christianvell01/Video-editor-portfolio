@@ -1,0 +1,90 @@
+/* Profile introduction, dissolving dividers, and light that responds to touch. */
+.profile-section{position:relative;display:grid;grid-template-columns:.8fr 1.2fr;gap:clamp(40px,7vw,110px);align-items:center;min-height:min(760px,calc(100svh - 88px));padding-top:55px;padding-bottom:70px}
+.profile-portrait{position:relative;aspect-ratio:1/1;width:100%;max-width:470px;border-radius:28px;overflow:hidden;background:linear-gradient(135deg,#1d263343,#10131bbf);border:1px solid #b9c6df24;box-shadow:0 0 32px #c3cedc08,0 22px 65px #0005;isolation:isolate}
+.profile-portrait>.profile-photo{position:absolute;inset:0;z-index:0;display:block;width:100%;height:100%;object-fit:contain;object-position:center;transform:scale(1.08);transform-origin:50% 42%}
+.profile-portrait:after{content:"";position:absolute;inset:60% 0 0;pointer-events:none;background:linear-gradient(transparent,#05070db3);z-index:1}
+.profile-portrait>.portrait-label{z-index:2;color:#e2e7f0;text-shadow:0 1px 8px #000}
+.portrait-placeholder{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:22px;background:radial-gradient(ellipse at 30% 20%,#a8bcdc15,transparent 65%)}
+.portrait-monogram{font-family:Georgia,'Times New Roman',serif;font-size:clamp(80px,12vw,170px);font-weight:400;line-height:1;letter-spacing:-.08em;color:#d6deec}
+.portrait-caption{color:#9da8bc;font-size:14px;letter-spacing:2px;text-transform:uppercase}
+.portrait-label{position:absolute;bottom:24px;left:24px;right:24px;display:flex;justify-content:space-between;color:#9ca9bf;font-size:12px;letter-spacing:1.3px}
+.profile-copy h2{font-size:clamp(44px,5.5vw,76px);letter-spacing:-2.6px;line-height:1.1;margin-bottom:14px}
+.profile-role{font-size:20px;color:#c1cbe0;line-height:1.5;margin-bottom:24px}
+.profile-bio{font-size:18px;line-height:1.85;color:var(--muted);max-width:560px;margin-bottom:28px}
+.profile-specialties{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:30px}
+.profile-specialties>span{font-size:14px;padding:7px 13px;border-radius:30px;border:1px solid #afbed52b;background:#a5b7d409;color:#cbd3e2}
+.profile-actions{display:flex;gap:12px;flex-wrap:wrap}
+.profile-copy>.sample-note{margin-top:20px}
+.profile-scroll{position:absolute;bottom:16px;left:50%;transform:translateX(-50%);font-size:12px;letter-spacing:1.3px;color:#a9b2c5;display:flex;align-items:center;gap:16px;white-space:nowrap}
+.profile-scroll>span{width:60px;height:1px;background:linear-gradient(90deg,#b8c8e88c,transparent)}
+.profile-scroll:hover{color:#eef2fa}
+#about.hero{padding-top:80px}
+.approach{position:relative;border:0;padding:30px 0}
+.approach:before,.approach:after{content:'';position:absolute;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,#a7b8d342 20%,#a7b8d350 50%,#a7b8d342 80%,transparent);pointer-events:none}
+.approach:before{top:0}.approach:after{bottom:0}
+.interactive-surface{--light-x:50%;--light-y:50%;position:relative}
+.interactive-surface:before{content:'';position:absolute;inset:0;border-radius:inherit;background:radial-gradient(350px circle at var(--light-x) var(--light-y),#bdccec16,transparent 72%);opacity:0;transition:opacity .45s;pointer-events:none;z-index:0}
+.interactive-surface>*{position:relative;z-index:1}
+.profile-portrait>.portrait-placeholder{position:absolute}.profile-portrait>.portrait-label{position:absolute}
+.contact-card{border:0;border-radius:28px;padding:38px;background:linear-gradient(135deg,#a2b8dd10,#151a25a8 60%,#0b101990);box-shadow:inset 0 1px 0 #d1dcf12e,inset 0 -1px 0 #bac6da0b,0 18px 65px #0005,0 0 55px #9daddb0a;backdrop-filter:blur(12px);overflow:hidden}
+.contact-card-top{display:flex;align-items:center;justify-content:space-between;gap:20px;margin-bottom:30px}
+.contact-card-top .eyebrow{margin:0;color:#bdc8df;font-size:12px}
+.contact-card-top svg{width:26px;height:26px;fill:none;stroke:#b9c7e0;stroke-width:1.2}
+.contact-card .email-link{font-size:clamp(22px,2.6vw,34px);letter-spacing:-.7px;color:#edf1fa;overflow-wrap:anywhere}
+.contact-card .contact-bottom{position:relative;border:0;padding-top:24px;margin-top:28px;font-size:12px;gap:16px;align-items:center}
+.contact-card .contact-bottom:before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,#b4c3de40 30%,#b4c3de20 70%,transparent)}
+#copy-email{font-size:14px;white-space:nowrap;background:#b9c9e412;border:1px solid #bac7dd24;border-radius:20px;padding:8px 14px;color:#d4def0;transition:background .25s,border-color .25s}
+#copy-email:hover{background:#b9c9e422;border-color:#bac7dd60}
+.copy-status{font-size:12px;min-height:0;margin:0;color:#b7c6df}.copy-status:not(:empty){margin-top:12px}
+.ambient-toggle{position:fixed;bottom:20px;right:24px;z-index:15;display:flex;align-items:center;gap:9px;font-size:12px;color:#b1bbce;background:#080c14a6;border:1px solid #a8b8d322;border-radius:30px;padding:8px 13px;backdrop-filter:blur(12px)}
+.ambient-toggle:hover{color:#eff3fb;border-color:#c7d4eb50}.ambient-toggle:disabled{opacity:.6;cursor:default}
+.motion-symbol{font-size:14px;line-height:1}.intro-active .ambient-toggle,.modal-open .ambient-toggle{visibility:hidden}
+.media-spotlight{position:absolute;inset:0;z-index:2;pointer-events:none;border-radius:inherit;background:radial-gradient(400px circle at var(--light-x,50%) var(--light-y,50%),#d1def71b,transparent 65%);opacity:0;transition:opacity .4s}
+@media(hover:hover) and (pointer:fine){.interactive-surface:hover:before,.hero-reel:hover .media-spotlight,.featured-media:hover .media-spotlight,.project-media:hover .media-spotlight{opacity:1}.profile-portrait:hover{border-color:#c6d3e74a;box-shadow:0 0 48px #c3cedc12,0 22px 65px #0005}.hero-reel,.featured-media,.project-media{transform:perspective(1100px) rotateX(var(--tilt-x,0deg)) rotateY(var(--tilt-y,0deg));transition:transform .45s cubic-bezier(.16,1,.3,1),box-shadow .4s,border-color .4s}.hero-reel:hover,.featured-media:hover,.project-media:hover{transform:perspective(1100px) rotateX(var(--tilt-x,0deg)) rotateY(var(--tilt-y,0deg)) translateY(-3px)}}
+@media(max-width:1050px){.profile-section{gap:40px}.gallery-header{grid-template-columns:150px auto minmax(0,1fr) 64px}.gallery-header nav>a{padding-inline:10px}.gallery-header .menu-toggle{width:64px}}
+@media(max-width:760px){.profile-section{grid-template-columns:1fr;gap:30px;padding-top:30px;padding-bottom:65px;min-height:auto}.profile-portrait{width:min(100%,380px);margin-inline:auto;border-radius:22px}.portrait-monogram{font-size:120px}.profile-copy h2{font-size:48px}.profile-role{font-size:18px}.profile-bio{font-size:16px;max-width:none}.profile-scroll{bottom:8px}.gallery-header{grid-template-columns:1fr 72px}.gallery-header .menu-toggle{width:72px}#about.hero{padding-top:70px}.contact-card{padding:28px;border-radius:22px}.contact-card .email-link{font-size:27px}.ambient-toggle{bottom:14px;right:14px}.ambient-toggle .motion-label{font-size:12px}.approach{padding:28px 0}}
+@media(prefers-reduced-motion:reduce){.hero-reel,.featured-media,.project-media,.hero-reel:hover,.featured-media:hover,.project-media:hover{transform:none!important}.interactive-surface:before,.media-spotlight{display:none}.profile-portrait{transition:none}}
+
+/* Personal details and dividers that dissolve into the ribbon background. */
+.services-grid{position:relative;border:0}
+.services-grid:before,.services-grid article:after,#contact:after{content:'';position:absolute;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,#a7b8d342 20%,#a7b8d350 50%,#a7b8d342 80%,transparent);pointer-events:none}
+.services-grid:before{top:0}
+.services-grid article,.services-grid article:last-child,.services-grid article:nth-child(-n+2),.services-grid article:nth-child(3){position:relative;border:0}
+.services-grid article:after{bottom:0}
+#contact{position:relative}#contact:after{bottom:0}
+footer{border-top:0}
+#contact>div:first-child>.eyebrow{font-size:15px;line-height:1.65;letter-spacing:2px}
+.contact-card .email-link{font-size:clamp(18px,1.8vw,28px);line-height:1.5;letter-spacing:-.5px}
+.social-contact-section{position:relative;margin-top:30px;padding-top:26px}
+.social-contact-section:before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,#b4c3de40 30%,#b4c3de20 70%,transparent)}
+.social-contact-section>.eyebrow{font-size:12px;color:#b4c0d6;margin-bottom:16px}
+.social-contact-row{display:flex;align-items:center;justify-content:space-between;gap:18px;padding:11px 0;color:#e1e7f2;font-size:14px}
+.social-pending{font-size:12px;color:#939db1}
+@media(max-width:760px){#contact>div:first-child>.eyebrow{font-size:14px}.contact-card .email-link{font-size:clamp(18px,5vw,24px)}}
+
+/* A single, centered closing invitation inspired by the supplied reference. */
+.contact.contact-cta-section{display:block;padding-top:110px;padding-bottom:65px}
+#contact .contact-cta{position:relative;text-align:center;padding:78px 40px 66px;border:1px solid #b7c7df24;border-radius:28px;background:radial-gradient(ellipse at 50% 0%,#93a9d31e,transparent 60%),#080b12b8;box-shadow:0 22px 85px #0004,0 0 55px #9daddb07;overflow:hidden;backdrop-filter:blur(10px)}
+#contact .contact-cta>.eyebrow{font-size:14px;letter-spacing:2px;color:#a8b7d1;margin-bottom:24px}
+.contact-cta h2{font-size:clamp(36px,4.6vw,64px);line-height:1.12;letter-spacing:-2.2px;max-width:1000px;margin:0 auto 26px}
+.contact-cta h2 .reveal-line-inner>span{color:#f1f2f6}
+.contact-cta-copy{font-size:18px;line-height:1.75;color:#adb7ca;max-width:770px;margin:0 auto 28px}
+.contact-cta>.button{border:0;padding:14px 25px;font-size:14px;box-shadow:0 0 25px #b2c2e212}
+.contact-chips{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:9px;margin-top:22px}
+.contact-chip{display:inline-flex;align-items:center;justify-content:center;min-height:36px;padding:7px 13px;border:1px solid #b8c8e827;border-radius:25px;background:#d4ddec04;color:#aeb9cf;font-size:12px;line-height:1.5;transition:background .25s,color .25s,border-color .25s}
+.contact-chip:hover{background:#c3d1e80d;color:#e9effa;border-color:#b8c8e854}
+.contact-chip-status{font-size:12px;color:#b8c8e8;min-height:18px;margin:14px 0 0}
+@media(max-width:760px){.contact.contact-cta-section{padding-top:75px;padding-bottom:45px}#contact .contact-cta{padding:48px 22px 32px;border-radius:22px}#contact .contact-cta>.eyebrow{font-size:12px;letter-spacing:1.4px}.contact-cta h2{font-size:clamp(32px,7vw,46px);letter-spacing:-1.3px}.contact-cta-copy{font-size:16px}.contact-chip{font-size:12px;max-width:100%;overflow-wrap:anywhere}}
+
+/* About card: modest portrait zoom, with a separate readable caption. */
+.profile-card{width:100%;max-width:470px;padding:12px;border:1px solid #b9c6df24;border-radius:28px;background:linear-gradient(145deg,#202735b3,#0d111bd9);box-shadow:0 0 32px #c3cedc08,0 22px 65px #0005;overflow:hidden;backdrop-filter:blur(12px)}
+.profile-card>.profile-portrait{width:100%;max-width:none;border-radius:19px;border:0;box-shadow:none}
+.profile-card-details{padding:25px 15px 17px}
+.profile-card-details>.eyebrow{font-size:11px;letter-spacing:2.4px;margin:0 0 12px;color:#aab8cf}
+.profile-card-details h3{font-size:28px;line-height:1.25;letter-spacing:-.8px;margin:0 0 7px}
+.profile-card-role{font-size:14px;line-height:1.6;color:#bac6d9;margin:0 0 20px}
+.profile-availability{display:flex;align-items:center;gap:9px;font-size:12px;line-height:1.6;color:#d3dce8;margin:0;padding-top:18px;position:relative}
+.profile-availability:before{content:"";position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,#bac6df38,transparent)}
+.profile-availability>span{width:6px;height:6px;flex:none;border-radius:50%;background:#b5d9cd;box-shadow:0 0 10px #a8d8c94d}
+.author>.author-photo{display:block;object-fit:cover;object-position:center;overflow:hidden}
+@media(max-width:760px){.profile-card{width:min(100%,380px);margin-inline:auto;border-radius:22px}.profile-card>.profile-portrait{width:100%;border-radius:15px}.profile-card-details{padding:22px 12px 14px}.profile-card-details h3{font-size:26px}}
